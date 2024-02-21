@@ -4,15 +4,28 @@ import React from 'react'
 import { CopyBlock, androidstudio} from 'react-code-blocks'
 import { postType } from '@/types/postType'
 import PortableText from 'react-portable-text'
+import { PortableTextBlock } from 'sanity'
 
 type Props = {
- post : postType
+ post : {
+ 
+  _id : string,
+  _createdAt : string,
+  name : string,
+  bait: string,
+  slug : string,
+  challenge2 : PortableTextBlock[],
+  intro : PortableTextBlock[],
+  afterFirstChallenge : PortableTextBlock[],
+  outro : PortableTextBlock[],
+  challenge : PortableTextBlock[],
+}
 }
 
 function SinglePageContent({post}:Props) {        
 
-    const challengetoStr  = post.challenge[0].children[0].text 
-    const challengetoStr2  = post.challenge2 ? post.challenge2[0].children[0].text : null
+    const challengetoStr : any = post.challenge ? post.challenge[0].children[0].text : null  
+    const challengetoStr2 : any = post.challenge2 ? post.challenge2[0].children[0].text : null 
     
 
   return (
