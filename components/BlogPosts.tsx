@@ -21,7 +21,7 @@ const BlogPosts = async () => {
             <Link className='titles'  href={`/product/${post.slug}`}>
             <h4>{post.name}</h4>
             </Link>
-            {iniIntro.length < 100 ? <p>{iniIntro}</p> : <p>{newIntro}</p>}
+            {iniIntro.length < 100 ? <p className='baitt'>{iniIntro}</p> : <p className='baitt'>{newIntro}</p>}
             <br/>
             <hr/>
             <br />
