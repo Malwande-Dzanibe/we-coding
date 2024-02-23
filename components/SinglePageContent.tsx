@@ -4,6 +4,10 @@ import React from 'react'
 import { CopyBlock, androidstudio} from 'react-code-blocks'
 import { postType } from '@/types/postType'
 import PortableText from 'react-portable-text'
+    // @ts-ignore
+import SyntaxHighlighter from 'react-syntax-highlighter';
+    // @ts-ignore
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 type Props = {
  post : postType
@@ -22,13 +26,13 @@ function SinglePageContent({post}:Props) {
         className='portable'
         content={post.intro}   
         />
-        <CopyBlock
-        text={challengetoStr}
-        language='tsx'
-        showLineNumbers
-        wrapLongLines
-        theme={androidstudio}
-        />
+        <div className='highl'>
+            <SyntaxHighlighter language="javascript" style={docco} customStyle={{
+              padding : "20px"
+            }}>
+              {challengetoStr}
+            </SyntaxHighlighter>
+        </div>
         {post.afterFirstChallenge && (
           <PortableText 
           className='portable'
@@ -37,13 +41,13 @@ function SinglePageContent({post}:Props) {
         )}
         {
           challengetoStr2 && (
-            <CopyBlock
-            text={challengetoStr2}
-            language='tsx'
-            showLineNumbers
-            wrapLongLines
-            theme={androidstudio}
-            />
+            <div className='highl'>
+            <SyntaxHighlighter language="javascript" style={docco} customStyle={{
+              padding : "20px"
+            }}>
+              {challengetoStr2}
+            </SyntaxHighlighter>
+        </div>
           )
         }
         <PortableText 
