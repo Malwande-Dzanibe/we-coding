@@ -7,7 +7,7 @@ import PortableText from 'react-portable-text'
     // @ts-ignore
 import SyntaxHighlighter from 'react-syntax-highlighter';
     // @ts-ignore
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 type Props = {
  post : postType
@@ -27,7 +27,7 @@ function SinglePageContent({post}:Props) {
         content={post.intro}   
         />
         <div className='highl'>
-            <SyntaxHighlighter language="javascript" style={docco} customStyle={{
+            <SyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{
               padding : "20px"
             }}>
               {challengetoStr}
@@ -42,7 +42,7 @@ function SinglePageContent({post}:Props) {
         {
           challengetoStr2 && (
             <div className='highl'>
-            <SyntaxHighlighter language="javascript" style={docco} customStyle={{
+            <SyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{
               padding : "20px"
             }}>
               {challengetoStr2}
