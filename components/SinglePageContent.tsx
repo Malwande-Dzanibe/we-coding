@@ -55,8 +55,9 @@ function SinglePageContent({post}:Props) {
         content={post.outro}
         />
         <p>
-          For more coding challenges please follow me on <a href='https://web.facebook.com/profile.php?id=100077502305937' target='_blank'>Facebook</a> so that you will not miss out everytime I post one. Thank you for visiting.
+             Thank you for visiting. Visit our <a href='https://web.facebook.com/profile.php?id=100077502305937' target='_blank'>Facebook</a>  page
         </p>
+        
     </div>
   )
 }
