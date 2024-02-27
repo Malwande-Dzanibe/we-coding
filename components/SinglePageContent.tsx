@@ -16,7 +16,7 @@ type Props = {
 function SinglePageContent({post}:Props) {        
 
     // @ts-ignore
-    const challengetoStr = post.challenge[0].children[0].text
+    const challengetoStr = post.challenge ? post.challenge[0].children[0].text : null 
     // @ts-ignore 
     const challengetoStr2 = post.challenge2 ? post.challenge2[0].children[0].text : null 
     
@@ -26,13 +26,17 @@ function SinglePageContent({post}:Props) {
         className='portable'
         content={post.intro}   
         />
-        <div className='highl'>
+        {
+          challengetoStr && (
+            <div className='highl'>
             <SyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{
               padding : "20px"
             }}>
               {challengetoStr}
             </SyntaxHighlighter>
         </div>
+          )
+        }
         {post.afterFirstChallenge && (
           <PortableText 
           className='portable'
