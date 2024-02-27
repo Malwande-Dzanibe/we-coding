@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 import { Analytics } from "@vercel/analytics/react"
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -18,10 +19,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
   return (
     <html lang="en">
       <head>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7333158740682287"
+            <script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_SECRETE}`}
              crossOrigin="anonymous"></script>
       </head>
       <body className={inter.className}>
