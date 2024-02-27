@@ -4,7 +4,7 @@ import postsSchema from './schemas/postsSchema'
 
  const client = defineConfig({
   title: 'Keep Coding Blog',
-  projectId: 'oy71ato',
+  projectId: 'oy71atob',
   dataset: 'production',
   apiVersion : "v2024-02-10",
   useCdn : true,
