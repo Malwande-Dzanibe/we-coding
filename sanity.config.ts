@@ -1,5 +1,5 @@
 import {defineConfig} from 'sanity'
-import { deskTool } from 'sanity/desk'
+import { structureTool } from 'sanity/structure'
 import postsSchema from './schemas/postsSchema'
 
  const client = defineConfig({
@@ -11,7 +11,7 @@ import postsSchema from './schemas/postsSchema'
   basePath: "/admin",
 
   plugins: [
-    deskTool(),
+    structureTool()
     //googleMapsInput(),
   ],
 
