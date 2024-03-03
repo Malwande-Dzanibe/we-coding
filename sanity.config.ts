@@ -1,6 +1,7 @@
 import {defineConfig} from 'sanity'
 import { structureTool } from 'sanity/structure'
 import postsSchema from './schemas/postsSchema'
+import {codeInput} from "@sanity/code-input"
 
  const client = defineConfig({
   title: 'Keep Coding Blog',
@@ -11,8 +12,8 @@ import postsSchema from './schemas/postsSchema'
   basePath: "/admin",
 
   plugins: [
-    structureTool()
-    //googleMapsInput(),
+    structureTool(),
+    codeInput()
   ],
 
   schema: {

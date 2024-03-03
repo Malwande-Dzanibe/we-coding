@@ -1,3 +1,4 @@
+
 import { PortableTextBlock } from "sanity"
 
 export type postType = {
@@ -6,9 +7,9 @@ export type postType = {
     name : string,
     bait: string,
     slug : string,
-    challenge2 : PortableTextBlock[],
+    challenge2 : any,
     intro : PortableTextBlock[],
     afterFirstChallenge : PortableTextBlock[],
     outro : PortableTextBlock[],
-    challenge : PortableTextBlock[]
+    challenge : any
 }

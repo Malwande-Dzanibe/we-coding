@@ -32,8 +32,10 @@ const postsSchema = {
         {
             name : "challenge",
             title : "Challenge",
-            type : "array",
-            of : [{type : "block"}]
+            type : "code",
+            options : {
+                language : "javascript"
+            }
         },
         {
             name : "afterFirstChallenge",
@@ -44,8 +46,10 @@ const postsSchema = {
         {
             name : "challenge2",
             title : "Challenge2",
-            type : "array",
-            of : [{type : "block"}]
+            type : "code",
+            options : {
+                language : "javascript"
+            }
         },
         {
             name : "outro",

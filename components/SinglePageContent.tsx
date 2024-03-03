@@ -1,7 +1,6 @@
 "use client"
 
 import React from 'react'
-import { CopyBlock, androidstudio} from 'react-code-blocks'
 import { postType } from '@/types/postType'
 import PortableText from 'react-portable-text'
     // @ts-ignore
@@ -13,13 +12,11 @@ type Props = {
  post : postType
 }
 
-function SinglePageContent({post}:Props) {        
-
-    // @ts-ignore
-    const challengetoStr = post.challenge ? post.challenge[0].children[0].text : null 
-    // @ts-ignore 
-    const challengetoStr2 = post.challenge2 ? post.challenge2[0].children[0].text : null 
-    
+function SinglePageContent({post}:Props) {   
+  
+  const codingChallenge = post.challenge ? post.challenge.code : null
+  const codingChallenge2 = post.challenge2 ? post.challenge2.code : null
+          
   return (
     <div>
         <PortableText 
@@ -27,12 +24,12 @@ function SinglePageContent({post}:Props) {
         content={post.intro}   
         />
         {
-          challengetoStr && (
+          codingChallenge && (
             <div className='highl'>
-            <SyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{
+            <SyntaxHighlighter  language="javascript" style={atomOneDark} customStyle={{
               padding : "20px"
             }}>
-              {challengetoStr}
+              {codingChallenge}
             </SyntaxHighlighter>
         </div>
           )
@@ -44,12 +41,12 @@ function SinglePageContent({post}:Props) {
           />
         )}
         {
-          challengetoStr2 && (
+          codingChallenge2 && (
             <div className='highl'>
             <SyntaxHighlighter language="javascript" style={atomOneDark} customStyle={{
               padding : "20px"
             }}>
-              {challengetoStr2}
+              {codingChallenge2}
             </SyntaxHighlighter>
         </div>
           )
