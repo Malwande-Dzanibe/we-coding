@@ -22,7 +22,7 @@ const onePost = async (postSlug : string) : Promise<postType>  => {
     intro,
     outro,
     challenge
-  }`,{postSlug, __NEXT_HTTP_AGENT : {revalidate : 60}})
+  }`,{postSlug, __NEXT_HTTPS_AGENT : {revalidate : 60}})
 }
 
 export default onePost

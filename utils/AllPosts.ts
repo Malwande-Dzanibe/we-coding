@@ -24,7 +24,7 @@ const AllPosts = async () : Promise<postType[]> => {
     intro,
     outro,
     challenge
-  }`,{ __NEXT_HTTP_AGENT : {revalidate : 60}})
+  }`,{ __NEXT_HTTPS_AGENT : {revalidate : 60}})
 }
 
 export default AllPosts
