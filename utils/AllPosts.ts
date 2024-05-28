@@ -1,19 +1,16 @@
+import { postType } from "@/types/postType";
+import { createClient, groq } from "next-sanity";
 
-import { postType } from "@/types/postType"
-import {createClient, groq} from "next-sanity"
+const AllPosts = async (): Promise<postType[]> => {
+  const client = createClient({
+    projectId: "oy71atob",
+    dataset: "production",
+    apiVersion: "v2024-02-10",
+    useCdn: true,
+  });
 
-const AllPosts = async () : Promise<postType[]> => {
-
-  const client = createClient(
-    {
-        projectId: 'oy71atob',
-        dataset: 'production',
-        apiVersion : "v2024-02-10",
-        useCdn : true,
-    }
-  )  
-
-  return client.fetch(groq`*[ _type == "post"]{
+  return client.fetch(
+    groq`*[ _type == "post"]{
     _id,
     _createdAt,
     bait,
@@ -24,7 +21,9 @@ const AllPosts = async () : Promise<postType[]> => {
     intro,
     outro,
     challenge
-  }`,{ __NEXT_HTTPS_AGENT : {revalidate : 60}})
-}
+  }`,
+    { __NEXT_HTTPS_AGENT: { revalidate: 60 } }
+  );
+};
 
-export default AllPosts
+export default AllPosts;
